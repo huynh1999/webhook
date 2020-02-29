@@ -1,15 +1,12 @@
 package com.example.demo;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Controller {
-    @PostMapping("/post")
-    public String post(@RequestBody String content)
+    @GetMapping("/post")
+    public String post(@RequestParam("hub.challenge") String challenge,@RequestParam("hub.verify_token")String token)
     {
-        System.out.println(content);
-        return "";
+        return challenge;
     }
 }
