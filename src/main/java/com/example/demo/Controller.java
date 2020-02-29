@@ -9,11 +9,12 @@ public class Controller {
     {
         System.out.println(challenge);
         System.out.println(token);
-        return token;
+        return challenge;
     }
     @PostMapping("/post")
     public String getPost(@RequestBody String body)
     {
+        System.out.println(body);
         return body;
     }
 }
